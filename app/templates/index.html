@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+  </head>
+  <body>
+    <h1>Home page</h1>
+
+    <table border="3" width="90%">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>adress</th>
+        <th>action</th>
+      </tr>
+      <tr>
+        {% for record in  records %}
+         <tr>
+           <td>{{record.id}}</td>
+           <td>{{record.name}}</td>
+           <td>{{record.adress}}</td>
+           <td><a href="/app/delete_record?id={{record.id}}">delete</a>|<a href="/app/update_record?id={{record.id}}">Update</a></td>
+         </tr>
+        {% endfor %}
+      </tr>
+    </table>
+
+    <h1><a href="/app/set_form">Add record</a></h1>
+  </body>
+</html>
